@@ -1,7 +1,9 @@
 # Accounting Ledger Application
 
-This is my **Capstone 1 Project** for the *Java Development Fundamentals* course in the Year Up United Java Focus Academy.  
-The Accounting Ledger Application is a simple program written in Java that allows users to track deposits, payments, and run basic financial reports.
+This is my **Capstone 1 Project** for the *Java Development Fundamentals* course in the Year Up United Java Focus
+Academy.  
+The Accounting Ledger Application is a simple program written in Java that allows users to track deposits, payments, and
+run basic financial reports.
 
 ---
 
@@ -23,12 +25,15 @@ The Accounting Ledger Application is a simple program written in Java that allow
 ## Screenshots
 
 ### Home Screen
+
 ![Home Screen](images/home_screen.png)
 
 ### Ledger Screen
+
 ![Ledger Screen](images/ledger_screen.png)
 
 ### Reports Screen
+
 ![Reports Screen](images/reports_screen.png)
 
 ## Interesting Piece of Code
@@ -38,6 +43,7 @@ Below is a small snippet that handles adding a new transaction and saves it auto
 ![Interesting Code](images/Interesting_Code.png)
 
 This block:
+
 * Gets the current date and time
 * Prompts the user for input
 * Automatically saves it to the CSV file

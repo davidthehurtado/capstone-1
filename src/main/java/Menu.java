@@ -3,7 +3,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Menu {
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void homeScreen() {
         while (true) {
@@ -87,7 +87,6 @@ public class Menu {
                         .forEach(Menu::printTx);
             }
             case "0" -> {
-                return;
             }
             default -> System.out.println("(You can add more report logic later)");
         }
