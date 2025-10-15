@@ -30,3 +30,14 @@ The Accounting Ledger Application is a simple program written in Java that allow
 
 ### Reports Screen
 ![Reports Screen](images/reports_screen.png)
+
+## Interesting Piece of Code
+
+Below is a small snippet that handles adding a new transaction and saves it automatically to the CSV file:
+
+![Interesting Code](images/Interesting_Code.png)
+
+This block:
+* Gets the current date and time
+* Prompts the user for input
+* Automatically saves it to the CSV file
