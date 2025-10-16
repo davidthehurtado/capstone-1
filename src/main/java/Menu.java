@@ -39,7 +39,7 @@ public class Menu {
         String vendor = scanner.nextLine();
         System.out.print("Enter amount: ");
         double amount = Double.parseDouble(scanner.nextLine());
-        if (!isDeposit) amount *= -1; // make payment negative
+        if (!isDeposit) amount *= -1; // THIS MAKES PAYMENT NEGATIVE
 
         Ledger.addTransaction(new Transaction(date, time, desc, vendor, amount));
         System.out.println("Transaction added!");

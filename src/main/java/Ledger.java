@@ -4,7 +4,7 @@ import java.util.*;
 public class Ledger {
     private static final String FILE_NAME = "transactions.csv";
 
-    // Read all transactions
+    // READ ALL TRANSACTIONS
     public static List<Transaction> readTransactions() {
         List<Transaction> list = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_NAME))) {
@@ -24,7 +24,7 @@ public class Ledger {
         return list;
     }
 
-    // Append a new transaction
+    // APPEND NEW TRANSACTION
     public static void addTransaction(Transaction t) {
         try (FileWriter fw = new FileWriter(FILE_NAME, true)) {
             fw.write(t.toString() + "\n");

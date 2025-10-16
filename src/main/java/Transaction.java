@@ -1,9 +1,9 @@
 public class Transaction {
-    private String date;
-    private String time;
-    private String description;
-    private String vendor;
-    private double amount;
+    private final String date;
+    private final String time;
+    private final String description;
+    private final String vendor;
+    private final double amount;
 
     public Transaction(String date, String time, String description, String vendor, double amount) {
         this.date = date;
@@ -13,7 +13,7 @@ public class Transaction {
         this.amount = amount;
     }
 
-    // Getters
+    // GETTERS
     public String getDate() {
         return date;
     }
@@ -34,7 +34,7 @@ public class Transaction {
         return amount;
     }
 
-    // CSV format
+    // CSV FORMAT
     @Override
     public String toString() {
         return date + "|" + time + "|" + description + "|" + vendor + "|" + amount;

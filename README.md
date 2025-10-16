@@ -1,12 +1,9 @@
 # Accounting Ledger Application
 
-This is my **Capstone 1 Project** for the *Java Development Fundamentals* course in the Year Up United Java Focus
-Academy.  
+This is my **Capstone 1 Project**.
 The Accounting Ledger Application is a simple program written in Java that allows users to track deposits, payments, and
 run basic financial reports.
-
 ---
-
 ## Features
 
 - Add deposits or payments (debits)
@@ -18,10 +15,8 @@ run basic financial reports.
     - Year-to-date
     - Previous year
     - Search by vendor name
-- Transactions display newest first
 
 ---
-
 ## Screenshots
 
 ### Home Screen
