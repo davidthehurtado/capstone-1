@@ -5,6 +5,7 @@ import java.util.*;
 public class Menu {
     private static final Scanner scanner = new Scanner(System.in);
 
+    //HOME SCREEN
     public static void homeScreen() {
         while (true) {
             System.out.println("\n⋆✴˚｡⋆ HOME SCREEN ⋆✴˚｡⋆");
@@ -28,26 +29,28 @@ public class Menu {
         }
     }
 
+    //ADD TRANSACTION
     private static void addTransaction(boolean isDeposit) {
-        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime now = LocalDateTime.now(); //Uses LocalDateTime to automatically timestamp each record.
         String date = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
 
-        System.out.print("Enter description: ");
+        System.out.print("Enter description: "); //Reads description, vendor, and amount from user input.
         String desc = scanner.nextLine();
         System.out.print("Enter vendor: ");
         String vendor = scanner.nextLine();
         System.out.print("Enter amount: ");
         double amount = Double.parseDouble(scanner.nextLine());
-        if (!isDeposit) amount *= -1; // THIS MAKES PAYMENT NEGATIVE
+        if (!isDeposit) amount *= -1; // The negative sign next to 1 makes the amounts negative in the csv.
 
-        Ledger.addTransaction(new Transaction(date, time, desc, vendor, amount));
+        Ledger.addTransaction(new Transaction(date, time, desc, vendor, amount)); //Calls Ledger.addTransaction() to save the data to the file.
         System.out.println("Transaction added!");
     }
 
+    //LEDGER SCREEN & FILTERING
     private static void ledgerScreen() {
-        List<Transaction> all = Ledger.readTransactions();
-        Collections.reverse(all); // newest first
+        List<Transaction> all = Ledger.readTransactions(); //Pulls all transactions using Ledger.readTransactions().
+        Collections.reverse(all); //Collections.reverse(all) ensures newest entries appear first.
 
         while (true) {
             System.out.println("\n⋆✴˚｡⋆ LEDGER ⋆✴˚｡⋆");
@@ -57,9 +60,9 @@ public class Menu {
 
             switch (choice) {
                 case "A" -> all.forEach(Menu::printTx);
-                case "D" -> all.stream().filter(t -> t.getAmount() > 0).forEach(Menu::printTx);
+                case "D" -> all.stream().filter(t -> t.getAmount() > 0).forEach(Menu::printTx); //Uses Java Streams for filtering. (e.g., .filter(t -> t.getAmount() > 0) shows only deposits).
                 case "P" -> all.stream().filter(t -> t.getAmount() < 0).forEach(Menu::printTx);
-                case "R" -> reportMenu(all);
+                case "R" -> reportMenu(all); //Connects to another submenu (reportMenu) for advanced options.
                 case "H" -> {
                     return;
                 }
@@ -68,6 +71,7 @@ public class Menu {
         }
     }
 
+    //REPORTS
     private static void reportMenu(List<Transaction> all) {
         System.out.println("\n1) Month To Date");
         System.out.println("2) Previous Month");

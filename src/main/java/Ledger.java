@@ -10,7 +10,7 @@ public class Ledger {
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_NAME))) {
             String line;
             while ((line = br.readLine()) != null) {
-                String[] data = line.split("\\|");
+                String[] data = line.split("\\|"); //Reads each line, splits it by |, and converts it back into a Transaction object.
                 if (data.length == 5) {
                     list.add(new Transaction(
                             data[0], data[1], data[2], data[3],
