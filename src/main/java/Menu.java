@@ -7,7 +7,7 @@ public class Menu {
 
     //HOME SCREEN
     public static void homeScreen() {
-        while (true) {
+        while (true) { //Continuous loop listens for user input. Options lead to deposit, payment, ledger, or exit. This keeps the program interactive until the user chooses to exit.
             System.out.println("\n⋆✴˚｡⋆ HOME SCREEN ⋆✴˚｡⋆");
             System.out.println("D) Add Deposit");
             System.out.println("P) Make Payment (Debit)");
@@ -96,6 +96,7 @@ public class Menu {
         }
     }
 
+    //printTx() Helper Method:
     private static void printTx(Transaction t) {
         System.out.printf("%s | %s | %s | %s | %.2f%n",
                 t.getDate(), t.getTime(), t.getDescription(), t.getVendor(), t.getAmount());
